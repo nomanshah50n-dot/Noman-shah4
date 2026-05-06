@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shah Hospital — Malegaon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0b2545;
+  --navy-mid: #13315c;
+  --blue: #1b4f8a;
+  --sky: #2e86de;
+  --sky-light: #a8d5f7;
+  --teal: #00a896;
+  --teal-light: #e0f7f5;
+  --gold: #f4a629;
+  --cream: #f7f9fc;
+  --white: #ffffff;
+  --gray: #6b7a8d;
+  --border: #dde4ee;
+  --dark: #0d1b2a;
+  --shadow: 0 4px 24px rgba(11,37,69,0.10);
+  --shadow-lg: 0 12px 48px rgba(11,37,69,0.16);
+  --radius: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--navy);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 44px; height: 44px;
+  background: var(--teal);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.logo-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+.logo-text h1 span { color: var(--gold); }
+.logo-text p { font-size: 0.7rem; color: var(--sky-light); font-weight: 300; letter-spacing: 1px; text-transform: uppercase; margin-top: 1px; }
+
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.emergency-pill {
+  background: #e53e3e;
+  color: white;
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.emergency-pill:hover { background: #c53030; }
+.emergency-pill::before { content: '🚨'; font-size: 0.85rem; }
+
+.nav-links { display: flex; gap: 4px; }
+.nav-link {
+  background: none; border: none;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.nav-link:hover { background: rgba(255,255,255,0.1); color: white; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0e3d6e 100%);
+  color: white;
+  padding: 64px 28px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,168,150,0.18) 0%, transparent 70%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -40px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,134,222,0.15) 0%, transparent 70%);
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(0,168,150,0.2);
+  border: 1px solid rgba(0,168,150,0.4);
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5de8d5;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.hero h2 em { color: var(--gold); font-style: normal; }
+.hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 26px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: #009688; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,150,0.35); }
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 12px;
+  padding: 13px 26px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+}
+.stat-card {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 16px 22px;
+  text-align: center;
+  min-width: 110px;
+  backdrop-filter: blur(8px);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── QUICK ACTIONS ── */
+.quick-actions {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.quick-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.quick-inner::-webkit-scrollbar { display: none; }
+.quick-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 16px 22px;
+  border: none; background: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.18s;
+}
+.quick-btn:hover, .quick-btn.active {
+  color: var(--blue);
+  border-bottom-color: var(--teal);
+}
+.quick-btn .qicon { font-size: 1.1rem; }
+
+/* ── MAIN ── */
+.main { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
+
+.section-header {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.section-sub {
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* Doctors grid */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.25s, transform 0.22s;
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.4s ease both;
+  border: 1px solid var(--border);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.doctor-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+
+.doctor-img-wrap {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #e8f4fd, #d0eaf8);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.doctor-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.doctor-avatar {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+}
+.avail-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: #48bb78;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.dept-tag {
+  position: absolute;
+  bottom: 10px; left: 10px;
+  background: var(--navy);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+.doctor-body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+.doctor-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.doctor-spec {
+  font-size: 0.78rem;
+  color: var(--teal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.doctor-desc {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 14px;
+}
+.doctor-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.doctor-fee {
+  display: flex; flex-direction: column;
+}
+.fee-label { font-size: 0.68rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.4px; }
+.fee-amt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.fee-amt span { font-size: 0.75rem; color: var(--gray); font-weight: 400; font-family: 'Outfit', sans-serif; }
+
+.book-btn {
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.book-btn:hover { background: var(--sky); transform: scale(1.03); }
+
+/* ── WHY US ── */
+.why-section {
+  background: var(--navy);
+  color: white;
+  padding: 56px 28px;
+  margin: 48px 0 0;
+}
+.why-inner { max-width: 1200px; margin: 0 auto; }
+.why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.why-sub { text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 36px; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.why-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: background 0.2s;
+}
+.why-card:hover { background: rgba(255,255,255,0.12); }
+.why-icon { font-size: 2rem; margin-bottom: 10px; }
+.why-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+.why-card p { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* ── APPOINTMENT MODAL ── */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(11,37,69,0.6);
+  z-index: 200;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(4px);
+}
+.overlay.open { opacity: 1; pointer-events: all; }
+
+.appt-modal {
+  position: fixed; inset: 0;
+  z-index: 201;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  pointer-events: none;
+}
+.appt-box {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  transform: scale(0.94) translateY(16px);
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.appt-modal.open .appt-box {
+  transform: scale(1) translateY(0);
+  pointer-events: all;
+}
+
+.appt-header {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: white;
+  padding: 22px 24px;
+  border-radius: 20px 20px 0 0;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+}
+.appt-header-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.appt-header-text p { font-size: 0.8rem; opacity: 0.75; margin-top: 2px; }
+.doc-preview {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 8px 14px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.doc-preview .pname { font-weight: 700; font-size: 0.88rem; }
+.doc-preview .pfee { font-size: 0.75rem; opacity: 0.8; margin-top: 1px; }
+.close-btn {
+  background: rgba(255,255,255,0.18);
+  border: none; border-radius: 50%;
+  width: 32px; height: 32px;
+  color: white; font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+.close-btn:hover { background: rgba(255,255,255,0.3); }
+
+.appt-body { padding: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  background: white;
+  color: var(--dark);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(46,134,222,0.12);
+}
+.form-group textarea { resize: vertical; min-height: 72px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.form-divider {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gray);
+  margin: 20px 0 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.form-divider::before, .form-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--border);
+}
+
+.modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+.btn-cancel {
+  flex: 1; padding: 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  color: var(--dark);
+}
+.btn-cancel:hover { background: #f1f5f9; }
+
+.btn-whatsapp {
+  flex: 1; padding: 12px;
+  background: #25d366;
+  color: white; border: none;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  transition: background 0.18s;
+}
+.btn-whatsapp:hover { background: #1fb855; }
+.btn-email {
+  flex: 1; padding: 12px;
+  background: var(--blue);
+  color: white; border: none;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  transition: background 0.18s;
+}
+.btn-email:hover { background: var(--sky); }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--navy);
+  color: white;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  z-index: 500;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  white-space: nowrap;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.65);
+  padding: 40px 28px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+footer h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+footer p { font-size: 0.83rem; line-height: 1.7; }
+footer a { color: var(--sky-light); text-decoration: none; }
+footer a:hover { color: white; }
+.footer-bottom {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+/* No results */
+.no-results {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray);
+}
+
+/* Search */
+.search-wrap {
+  position: relative;
+  max-width: 340px;
+}
+.search-wrap input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 9px 16px 9px 40px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  background: white;
+  transition: border-color 0.18s;
+}
+.search-wrap input:focus { border-color: var(--sky); }
+.search-wrap::before {
+  content: '🔍';
+  position: absolute;
+  left: 13px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-inner { padding: 12px 16px; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; align-items: flex-start; }
+  .stat-card { min-width: 90px; }
+  .hero { padding: 40px 16px 52px; }
+  .main { padding: 28px 14px 60px; }
+  .doctors-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .modal-actions { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .doctors-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .doctor-body { padding: 12px 12px 14px; }
+  .doctor-name { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🏥</div>
+      <div class="logo-text">
+        <h1>Shah <span>Hospital</span></h1>
+        <p>Health is Wealth · Malegaon</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="nav-links">
+        <button class="nav-link" onclick="scrollTo(0,0)">Home</button>
+        <button class="nav-link" onclick="document.getElementById('doctors').scrollIntoView({behavior:'smooth'})">Doctors</button>
+        <button class="nav-link" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+      </div>
+      <a href="tel:9999999999" class="emergency-pill">Emergency: 9999999999</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Trusted Care Since 2001</div>
+      <h2>Your Health is Our<br><em>Top Priority</em></h2>
+      <p>Book appointments with our specialist doctors online — quick, easy, and free. Expert medical care delivered with compassion in Malegaon.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('doctors').scrollIntoView({behavior:'smooth'})">
+          📅 Book Appointment
+        </button>
+        <a href="tel:9999999999" class="btn-outline">
+          📞 Call Now
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Specialists</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5000+</div>
+        <div class="stat-label">Patients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Emergency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACTIONS -->
+<div class="quick-actions">
+  <div class="quick-inner" id="catNav"></div>
+</div>
+
+<!-- DOCTORS SECTION -->
+<main class="main" id="doctors">
+  <div class="section-header">
+    <div>
+      <div class="section-title">Our Specialist Doctors</div>
+      <div class="section-sub">Book an appointment with our experienced doctors</div>
+    </div>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search doctor or specialty…" oninput="filterDoctors()">
+    </div>
+  </div>
+  <div class="doctors-grid" id="doctorsGrid"></div>
+</main>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-title">Why Choose Shah Hospital?</div>
+    <div class="why-sub">Committed to providing quality healthcare in Malegaon</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h4>Expert Doctors</h4>
+        <p>Qualified specialists with years of clinical experience</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h4>Quick Appointments</h4>
+        <p>Book instantly via WhatsApp — no long waiting queues</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚨</div>
+        <h4>24/7 Emergency</h4>
+        <p>Round-the-clock emergency services always available</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💊</div>
+        <h4>Modern Equipment</h4>
+        <p>State-of-the-art diagnostic and treatment facilities</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">❤️</div>
+        <h4>Compassionate Care</h4>
+        <p>Patient-first approach with personalized attention</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <h4>🏥 Shah Hospital</h4>
+      <p>Dedicated to your health and well-being.<br>Quality healthcare for all of Malegaon.</p>
+      <p style="margin-top:10px; font-style:italic; color:rgba(255,255,255,0.4); font-size:0.8rem">"Health is Wealth"</p>
+    </div>
+    <div>
+      <h4>📞 Contact Us</h4>
+      <p>📱 <a href="tel:9999999999">9999999999</a></p>
+      <p>✉️ <a href="mailto:nomanshah67@gmail.com">nomanshah67@gmail.com</a></p>
+      <p>📍 Malegaon, Maharashtra</p>
+      <p style="margin-top:10px">🕐 OPD: 9am – 8pm (Mon–Sat)</p>
+      <p>🚨 Emergency: 24 × 7</p>
+    </div>
+    <div>
+      <h4>🔗 Quick Links</h4>
+      <p><a href="https://wa.me/919999999999" target="_blank">💬 WhatsApp Us</a></p>
+      <p><a href="tel:9999999999">📞 Call for Emergency</a></p>
+      <p><a href="mailto:nomanshah67@gmail.com">✉️ Email for Queries</a></p>
+      <p style="margin-top:12px; font-size:0.8rem; color:rgba(255,255,255,0.4)">Serving Malegaon with care</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Shah Hospital, Malegaon. All Rights Reserved.</div>
+</footer>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+<!-- APPOINTMENT MODAL -->
+<div class="appt-modal" id="apptModal">
+  <div class="appt-box">
+    <div class="appt-header">
+      <div class="appt-header-text">
+        <h3>📅 Book Appointment</h3>
+        <p>Fill details to confirm your visit</p>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div class="doc-preview" id="docPreview"></div>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+    </div>
+    <div class="appt-body">
+      <div class="form-divider">Patient Details</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="patName" placeholder="Patient's name">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="patAge" placeholder="Age" min="1" max="120">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="patPhone" placeholder="10-digit number">
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="patGender">
+            <option value="">Select…</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider">Appointment Details</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Preferred Date *</label>
+          <input type="date" id="apptDate">
+        </div>
+        <div class="form-group">
+          <label>Preferred Time</label>
+          <select id="apptTime">
+            <option>Morning (9am–12pm)</option>
+            <option>Afternoon (12pm–3pm)</option>
+            <option>Evening (3pm–7pm)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Chief Complaint / Reason for Visit</label>
+        <textarea id="patComplaint" placeholder="Briefly describe your symptoms or reason for visit…"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-whatsapp" onclick="sendAppt('whatsapp')">
+          <svg width="17" height="17" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </button>
+        <button class="btn-email" onclick="sendAppt('email')">✉️ Email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ──────────────────────────────────────
+//  HOSPITAL CONFIG
+// ──────────────────────────────────────
+const HOSPITAL = {
+  name: "Shah Hospital",
+  phone: "9999999999",
+  email: "nomanshah67@gmail.com",
+  location: "Malegaon, Maharashtra"
+};
+
+// ──────────────────────────────────────
+//  DOCTORS LIST
+// ──────────────────────────────────────
+const DOCTORS = [
+  {
+    id: 1,
+    name: "Dr. V.P. Vaidya",
+    spec: "General Surgeon",
+    dept: "Gen Surgery",
+    fee: 300,
+    emoji: "🩺",
+    img: "https://i.ibb.co/9kFgNXWp/IMG-20260505-WA0001.jpg",
+    qual: "MS (General Surgery)",
+    timing: "Mon–Sat, 10am–2pm",
+    desc: "Expert in laparoscopic & general surgeries with 20+ years experience."
+  },
+  {
+    id: 2,
+    name: "Dr. Rashid Ansari",
+    spec: "Cardiologist",
+    dept: "Cardiology",
+    fee: 500,
+    emoji: "❤️",
+    img: "",
+    qual: "MD, DM (Cardiology)",
+    timing: "Mon–Fri, 11am–3pm",
+    desc: "Specialist in heart diseases, ECG, echo & cardiac care management."
+  },
+  {
+    id: 3,
+    name: "Dr. Seema Kulkarni",
+    spec: "ENT Specialist",
+    dept: "ENT",
+    fee: 350,
+    emoji: "👂",
+    img: "",
+    qual: "MS (ENT)",
+    timing: "Tue–Sat, 9am–1pm",
+    desc: "Expert in ear, nose & throat disorders, sinus & hearing treatment."
+  },
+  {
+    id: 4,
+    name: "Dr. Anil Patil",
+    spec: "General Physician",
+    dept: "Medicine",
+    fee: 250,
+    emoji: "💊",
+    img: "",
+    qual: "MBBS, MD (Medicine)",
+    timing: "Mon–Sat, 9am–6pm",
+    desc: "Treats fever, diabetes, BP, infections & all general health issues."
+  },
+  {
+    id: 5,
+    name: "Dr. Priya Sharma",
+    spec: "Gynaecologist",
+    dept: "Gynaecology",
+    fee: 400,
+    emoji: "🤱",
+    img: "",
+    qual: "MS (Obs & Gynae)",
+    timing: "Mon–Sat, 10am–4pm",
+    desc: "Women's health specialist — prenatal care, delivery & gynaec surgeries."
+  },
+  {
+    id: 6,
+    name: "Dr. Farhan Sheikh",
+    spec: "Orthopaedic Surgeon",
+    dept: "Orthopaedics",
+    fee: 450,
+    emoji: "🦴",
+    img: "",
+    qual: "MS (Orthopaedics)",
+    timing: "Mon–Fri, 11am–5pm",
+    desc: "Bone, joint & spine specialist. Fracture management & joint replacement."
+  },
+  {
+    id: 7,
+    name: "Dr. Meena Joshi",
+    spec: "Paediatrician",
+    dept: "Paediatrics",
+    fee: 300,
+    emoji: "👶",
+    img: "",
+    qual: "MBBS, MD (Paediatrics)",
+    timing: "Mon–Sat, 9am–5pm",
+    desc: "Child specialist — vaccination, nutrition, growth & paediatric care."
+  },
+  {
+    id: 8,
+    name: "Dr. Suresh Borse",
+    spec: "Dermatologist",
+    dept: "Dermatology",
+    fee: 350,
+    emoji: "🧴",
+    img: "",
+    qual: "MD (Dermatology)",
+    timing: "Tue–Sun, 10am–3pm",
+    desc: "Skin, hair & nail specialist. Acne, eczema, allergy & cosmetic care."
+  }
+];
+
+// ──────────────────────────────────────
+//  STATE
+// ──────────────────────────────────────
+let activeDept = "All";
+let selectedDoc = null;
+
+// ──────────────────────────────────────
+//  INIT
+// ──────────────────────────────────────
+function init() {
+  // Set min date for appointment
+  const dateInput = document.getElementById("apptDate");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
+  dateInput.value = today;
+
+  buildCatNav();
+  renderDoctors(DOCTORS);
+}
+
+function buildCatNav() {
+  const depts = ["All", ...new Set(DOCTORS.map(d => d.dept))];
+  const nav = document.getElementById("catNav");
+  nav.innerHTML = depts.map(d =>
+    `<button class="quick-btn ${d === 'All' ? 'active' : ''}" onclick="selectDept('${d}', this)">
+      <span class="qicon">${deptIcon(d)}</span> ${d}
+    </button>`
+  ).join("");
+}
+
+function deptIcon(dept) {
+  const map = {
+    "All": "🏥", "Gen Surgery": "🔪", "Cardiology": "❤️",
+    "ENT": "👂", "Medicine": "💊", "Gynaecology": "🤱",
+    "Orthopaedics": "🦴", "Paediatrics": "👶", "Dermatology": "🧴"
+  };
+  return map[dept] || "🩺";
+}
+
+function selectDept(dept, btn) {
+  activeDept = dept;
+  document.querySelectorAll(".quick-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  filterDoctors();
+}
+
+function filterDoctors() {
+  const q = document.getElementById("searchInput").value.toLowerCase().trim();
+  const filtered = DOCTORS.filter(d => {
+    const matchDept = activeDept === "All" || d.dept === activeDept;
+    const matchQ = !q ||
+      d.name.toLowerCase().includes(q) ||
+      d.spec.toLowerCase().includes(q) ||
+      d.dept.toLowerCase().includes(q) ||
+      d.desc.toLowerCase().includes(q);
+    return matchDept && matchQ;
+  });
+  renderDoctors(filtered);
+}
+
+function renderDoctors(list) {
+  const grid = document.getElementById("doctorsGrid");
+  if (!list.length) {
+    grid.innerHTML = `<div class="no-results"><p style="font-size:2.5rem">🔍</p><p style="margin-top:10px;font-size:1rem">No doctors found.</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map((d, i) => {
+    const imgHTML = d.img
+      ? `<img src="${d.img}" class="doctor-img" alt="${d.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      : '';
+    const avatarStyle = d.img ? 'display:none' : '';
+    const initials = d.name.replace("Dr. ", "").split(" ").map(w => w[0]).join("").slice(0,2);
+    return `<div class="doctor-card" style="animation-delay:${i * 0.05}s">
+      <div class="doctor-img-wrap">
+        ${imgHTML}
+        <div class="doctor-avatar" style="${avatarStyle}">${initials}</div>
+        <div class="avail-badge">Available</div>
+        <div class="dept-tag">${d.dept}</div>
+      </div>
+      <div class="doctor-body">
+        <div class="doctor-name">${d.name}</div>
+        <div class="doctor-spec">${d.spec}</div>
+        <div class="doctor-desc">${d.desc}<br><span style="color:var(--blue);font-size:0.76rem;margin-top:4px;display:block">🕐 ${d.timing}</span></div>
+        <div class="doctor-footer">
+          <div class="doctor-fee">
+            <div class="fee-label">Consult Fee</div>
+            <div class="fee-amt">₹${d.fee} <span>/ visit</span></div>
+          </div>
+          <button class="book-btn" onclick="openAppt(${d.id})">📅 Book</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+// ──────────────────────────────────────
+//  MODAL
+// ──────────────────────────────────────
+function openAppt(id) {
+  selectedDoc = DOCTORS.find(d => d.id === id);
+  document.getElementById("docPreview").innerHTML =
+    `<div class="pname">${selectedDoc.name}</div>
+     <div class="pfee">₹${selectedDoc.fee} consult fee</div>`;
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("apptModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("apptModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+// ──────────────────────────────────────
+//  SEND APPOINTMENT
+// ──────────────────────────────────────
+function sendAppt(channel) {
+  const name = document.getElementById("patName").value.trim();
+  const phone = document.getElementById("patPhone").value.trim();
+  const age = document.getElementById("patAge").value.trim();
+  const gender = document.getElementById("patGender").value;
+  const date = document.getElementById("apptDate").value;
+  const time = document.getElementById("apptTime").value;
+  const complaint = document.getElementById("patComplaint").value.trim();
+
+  if (!name) { showToast("⚠️ Please enter patient name"); return; }
+  if (!phone || !/^\d{10}$/.test(phone)) { showToast("⚠️ Enter valid 10-digit phone"); return; }
+  if (!date) { showToast("⚠️ Please select appointment date"); return; }
+
+  const doc = selectedDoc;
+  const formattedDate = new Date(date).toLocaleDateString("en-IN", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+
+  let msg = `🏥 *Appointment Request — Shah Hospital*\n\n`;
+  msg += `👨‍⚕️ *Doctor:* ${doc.name}\n`;
+  msg += `🏷️ *Department:* ${doc.spec}\n`;
+  msg += `💰 *Consultation Fee:* ₹${doc.fee}\n\n`;
+  msg += `👤 *Patient Name:* ${name}\n`;
+  if (age) msg += `🎂 *Age:* ${age} years\n`;
+  if (gender) msg += `⚧️ *Gender:* ${gender}\n`;
+  msg += `📞 *Contact:* ${phone}\n\n`;
+  msg += `📅 *Preferred Date:* ${formattedDate}\n`;
+  msg += `🕐 *Preferred Time:* ${time}\n`;
+  if (complaint) msg += `\n📋 *Symptoms/Reason:* ${complaint}\n`;
+  msg += `\n_Booked via Shah Hospital website_`;
+
+  if (channel === "whatsapp") {
+    window.open(`https://wa.me/91${HOSPITAL.phone}?text=${encodeURIComponent(msg)}`, "_blank");
+  } else {
+    const subj = encodeURIComponent(`Appointment Request: ${name} → ${doc.name}`);
+    const body = encodeURIComponent(msg.replace(/\*/g, ""));
+    window.location.href = `mailto:${HOSPITAL.email}?subject=${subj}&body=${body}`;
+  }
+
+  closeModal();
+  // Reset form
+  ["patName","patPhone","patAge","patComplaint"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("patGender").value = "";
+  showToast("🎉 Appointment request sent! We'll confirm shortly.");
+}
+
+// ──────────────────────────────────────
+//  TOAST
+// ──────────────────────────────────────
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 3000);
+}
+
+init();
+</script>
+</body>
+</html>
